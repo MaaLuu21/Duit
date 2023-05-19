@@ -1,8 +1,9 @@
 import 'package:agenda_app/view/tela_login.dart';
+import 'package:agenda_app/view/tela_princiapal.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:agenda_app/view/tela_principal.dart';
+
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});

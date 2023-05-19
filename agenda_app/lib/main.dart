@@ -1,6 +1,7 @@
-import 'package:agenda_app/adicionar.dart';
-import 'package:agenda_app/editar_perfil.dart';
-import 'package:agenda_app/view/tela_principal.dart';
+
+import 'package:agenda_app/model/adicionar1.dart';
+import 'package:agenda_app/view/editar_perfil.dart';
+import 'package:agenda_app/view/tela_princiapal.dart';
 import 'package:agenda_app/view/perfil.dart';
 import 'package:agenda_app/view/recuperar_senha.dart';
 import 'package:agenda_app/view/recuperar_senha2.dart';
@@ -43,10 +44,11 @@ class _MyAppState extends State<MyApp> {
         'splash': (context) => SplashView(),
         'perfil': (context) => Perfil(),
         'sobre': (context) => Sobre(),
-        'adicionar':(context) => Adicionar(),
+      
         'editar_perfil':(context) => Editar_perfil(),
-   
       },
+     
+  
     );
   }
 }
