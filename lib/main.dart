@@ -1,8 +1,8 @@
-import 'package:agenda_app/view/editar_perfil.dart';
+
 import 'package:agenda_app/view/tela_princiapal.dart';
-import 'package:agenda_app/view/perfil.dart';
+
 import 'package:agenda_app/view/recuperar_senha.dart';
-import 'package:agenda_app/view/recuperar_senha2.dart';
+
 import 'package:agenda_app/view/sobre.dart';
 import 'package:agenda_app/view/splashView.dart';
 import 'package:agenda_app/view/tela_cadastro.dart';
