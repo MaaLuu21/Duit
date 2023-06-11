@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "284324049246",
+    "project_id": "duit-a240d",
+    "storage_bucket": "duit-a240d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284324049246:android:55f875db4dfaa60f0a5fcf",
+        "android_client_info": {
+          "package_name": "com.example.agenda_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284324049246-aphvkjv738fvnktu1g2ptglv0vuo4kl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0NSXmHSeiGHTr9KLI3gRSz_RwhdCD0QA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284324049246-aphvkjv738fvnktu1g2ptglv0vuo4kl7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "284324049246-fdrac5phco8gb8hpprkifsm9au9ictme.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.agendaApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
