@@ -57,7 +57,10 @@ class _Tela_principalState extends State<Tela_principal> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Cancelar'),
+              child: const Text(
+                'Cancelar',
+                style: TextStyle(fontSize: 15, color: Colors.black),
+              ),
             ),
             TextButton(
               onPressed: () async {
@@ -68,12 +71,15 @@ class _Tela_principalState extends State<Tela_principal> {
                   });
 
                   // Atualiza o nome no banco de dados
-                  LoginController().atualizarNomeUsuario(novoNome);
+                  LoginController().atualizarNomeUsuario(context, novoNome);
 
                   Navigator.of(context).pop();
                 }
               },
-              child: const Text('Salvar'),
+              child: const Text(
+                'Salvar',
+                style: TextStyle(fontSize: 15, color: Colors.black),
+              ),
             ),
           ],
         );
