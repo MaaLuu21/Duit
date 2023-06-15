@@ -17,9 +17,6 @@
         'nome': nome,
       });
 
-      // Adicione o nome do usuário ao banco de dados
-      atualizarNomeUsuario(context, nome);
-
       sucesso(context, 'Usuário criado com sucesso.');
       Navigator.pop(context);
     }).catchError((e) {
@@ -115,23 +112,5 @@
   return nomeNovo;
 }
 
-
-
-    // Atualiza o nome do usuário
- /* void atualizarNomeUsuario(BuildContext context, String nome) {
-  String uid = idUsuario();
-  FirebaseFirestore.instance
-      .collection('usuarios')
-      .doc(uid)
-      .set({'nome': nome}, SetOptions(merge: true))
-      .then((_) {
-    sucesso(context, 'Nome do usuário atualizado com sucesso.');
-    print('Nome do usuário atualizado com sucesso.');
-  }).catchError((error) {
-    erro(context, 'Erro ao atualizar o nome do usuário: $error');
-    print('Erro ao atualizar o nome do usuário: $error');
-  });
-}
-*/
   }
 

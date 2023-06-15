@@ -33,59 +33,60 @@ class _Tela_principalState extends State<Tela_principal> {
     Future<String> nomeUsuario = LoginController().usuarioLogado();
 
     // Atualizar o valor de txtNome.text quando os dados estiverem disponíveis
-    nomeUsuario.then((nome) {
+    nomeUsuario.then((novoNome) {
       setState(() {
-        txtNome.text = nome;
+        txtNome.text = novoNome;
       });
     });
   }
 
   void _abrirDialogEditarNome() async {
-    TextEditingController nomeController = TextEditingController();
+  TextEditingController nomeController = TextEditingController();
 
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Editar Nome'),
-          content: TextField(
-            controller: nomeController,
-            decoration: const InputDecoration(labelText: 'Nome'),
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Editar Nome'),
+        content: TextField(
+          controller: nomeController,
+          decoration: const InputDecoration(labelText: 'Nome'),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text(
+              'Cancelar',
+              style: TextStyle(fontSize: 15, color: Colors.black),
+            ),
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
+          TextButton(
+            onPressed: () async {
+              String novoNome = nomeController.text.trim();
+              if (novoNome.isNotEmpty) {
+                setState(() {
+                  txtNome.text = novoNome;
+                });
+
+                await LoginController().atualizarNomeUsuario(context, novoNome);
+                // Agora o nome do usuário será atualizado no banco de dados
+
                 Navigator.of(context).pop();
-              },
-              child: const Text(
-                'Cancelar',
-                style: TextStyle(fontSize: 15, color: Colors.black),
-              ),
+              }
+            },
+            child: const Text(
+              'Salvar',
+              style: TextStyle(fontSize: 15, color: Colors.black),
             ),
-            TextButton(
-              onPressed: () async {
-                String novoNome = nomeController.text.trim();
-                if (novoNome.isNotEmpty) {
-                  setState(() {
-                    txtNome.text = novoNome;
-                  });
+          ),
+        ],
+      );
+    },
+  );
+}
 
-                  // Atualiza o nome no banco de dados
-                  LoginController().atualizarNomeUsuario(context, novoNome);
-
-                  Navigator.of(context).pop();
-                }
-              },
-              child: const Text(
-                'Salvar',
-                style: TextStyle(fontSize: 15, color: Colors.black),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
